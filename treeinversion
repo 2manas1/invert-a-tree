@@ -1,0 +1,19 @@
+
+    // Method to invert the binary tree
+    public Node prerevorder(Node a) {
+        if (a == null) {
+            return null;
+        }
+        
+        // Swap left and right children
+        Node temp = a.left;
+        a.left = a.right;
+        a.right = temp;
+        
+        // Recur for left and right children
+        prerevorder(a.left);
+        prerevorder(a.right);
+        
+        return a;
+    }
+    
